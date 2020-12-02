@@ -221,7 +221,7 @@ function ensureSSL($iis){
 if ($env:PROCESSOR_ARCHITEW6432 -eq "AMD64") {
 
     write-warning "Relaunching in 64 bit."
-    &"$env:WINDIR\sysnative\windowspowershell\v1.0\powershell.exe" -NonInteractive -NoProfile -file "$($myInvocation.InvocationName)" $args
+    &"$env:WINDIR\sysnative\windowspowershell\v1.0\powershell.exe" -NonInteractive -NoProfile -file "$($MyInvocation.MyCommand.Path)" $args
     
     exit $lastexitcode
 }
